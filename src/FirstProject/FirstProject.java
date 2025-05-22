@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package FirstProject;
+import Controller.UserController;
 import database.*;
+import view.MyProj;
 /**
  *
  * @author anish
@@ -16,5 +18,11 @@ public class FirstProject {
         }else{
             System.out.println("Failed to connect to database");
         }
+        
+        MyProj myprojform = new MyProj();
+        myprojform.setVisible(true);
+        UserController controller = new UserController(myprojform);
+        controller.open();
+        
     }
 }

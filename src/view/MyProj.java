@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,8 +19,14 @@ public class MyProj extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public MyProj() {
+        setTitle("Sign UP");
+        setSize(400,300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,11 +41,12 @@ public class MyProj extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
 
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,10 +58,10 @@ public class MyProj extends javax.swing.JFrame {
 
         jLabel2.setText("Enter your Email: ");
 
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        submit.setText("Submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                submitActionPerformed(evt);
             }
         });
 
@@ -70,11 +79,15 @@ public class MyProj extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
-                    .addComponent(password)
-                    .addComponent(jButton1)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(124, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                            .addComponent(submit)
+                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(124, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(password)
+                        .addGap(17, 124, Short.MAX_VALUE))))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {email, name, password});
@@ -95,7 +108,7 @@ public class MyProj extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61)
-                .addComponent(jButton1)
+                .addComponent(submit)
                 .addContainerGap(75, Short.MAX_VALUE))
         );
 
@@ -106,9 +119,11 @@ public class MyProj extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        email.setText("");
+        password.setText("");
+        name.setText("");
+    }//GEN-LAST:event_submitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,15 +163,30 @@ public class MyProj extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField email;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField name;
     private javax.swing.JPasswordField password;
+    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 
+
     public void addAdduserListener(ActionListener listener){
-        
+        submit.addActionListener(listener);
+    }
+
+    public javax.swing.JTextField getemailField(){
+        return email;
+    }
+    
+
+    public javax.swing.JPasswordField getpasswordField(){
+        return password;
+    }
+    
+
+    public javax.swing.JTextField getnameField(){
+        return name;
     }
 }

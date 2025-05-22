@@ -5,7 +5,8 @@
         <group>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/FirstProject/src/model/User.java</file>
             <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/FirstProject/src/Dao/UserDao.java</file>
-            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/FirstProject/src/view/MyProj.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/FirstProject/src/view/User.java</file>
+            <file>file:/C:/Users/anish/OneDrive/Documents/NetBeansProjects/FirstProject/src/Controller/UserController.java</file>
         </group>
     </open-files>
 </project-private>
